@@ -23,10 +23,18 @@ show() {
     esac
 }
 # Prompt the user for the account number
-read -p "Enter number of the account: " Account_Number
+read -p "${Pink}Enter number of the account: " Account_Number
+
+#remove exixsting dir 
+if [ -d "$HOME/network-api$Account_Number" ]; then
+    show "Deleting existing repository..." "progress"
+    rm -rf "$HOME/network-api$Account_Number"
+fi
 
 # Create the directory
 mkdir "network-api$Account_Number"
+
+echo "Procceding with Account$Account_Number"
 
 SERVICE_NAME="nexus$Account_Number"
 SERVICE_FILE="/etc/systemd/system/$SERVICE_NAME.service"
@@ -53,10 +61,6 @@ else
     show "Git is already installed."
 fi
 
-if [ -d "$HOME/network-api$Account_Number" ]; then
-    show "Deleting existing repository..." "progress"
-    rm -rf "$HOME/network-api$Account_Number"
-fi
 sleep 3
 
 show "Cloning Nexus-XYZ network API repository..." "progress"
@@ -118,6 +122,6 @@ if ! sudo systemctl enable $SERVICE_NAME.service; then
     exit 1
 fi
 
-show "Nexus Prover installation and service setup complete!"
+show "Nexus Prover installation and service setup complete for Account Number $Account_Number!"
 show "You can check Nexus Prover logs using this command : journalctl -u nexus$Account_Number.service -fn 50"
 echo
