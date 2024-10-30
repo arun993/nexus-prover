@@ -23,7 +23,7 @@ show() {
     esac
 }
 # Prompt the user for the account number
-read -p "${Pink}Enter number of the account: " Account_Number
+read -p "${Pink}Enter Account Number: " Account_Number
 
 #remove exixsting dir 
 if [ -d "$HOME/network-api$Account_Number" ]; then
@@ -34,7 +34,7 @@ fi
 # Create the directory
 mkdir "network-api$Account_Number"
 
-echo "Procceding with Account$Account_Number"
+echo "Procceding with Account $Account_Number"
 
 SERVICE_NAME="nexus$Account_Number"
 SERVICE_FILE="/etc/systemd/system/$SERVICE_NAME.service"
