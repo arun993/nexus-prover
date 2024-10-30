@@ -7,7 +7,6 @@ BOLD=$(tput bold)
 NORMAL=$(tput sgr0)
 PINK='\033[1;35m'
 
-#Multi wallet script just find and $Account_Number and replace all by account number
 
 show() {
     case $2 in
