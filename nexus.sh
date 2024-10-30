@@ -79,14 +79,14 @@ fi
 show "Creating systemd service..." "progress"
 if ! sudo bash -c "cat > $SERVICE_FILE <<EOF
 [Unit]
-Description=Nexus XYZ Prover Service
+Description=Nexus XYZ Prover Service Instance **
 After=network.target
 
 [Service]
 User=$USER
 WorkingDirectory=$HOME/network-api**/clients/cli
 Environment=NONINTERACTIVE=1
-ExecStart=$HOME/.cargo/bin/cargo run --release --bin prover -- beta.orchestrator.nexus.xyz
+ExecStart=$HOME/.cargo/bin/cargo run --release --bin prover -- beta.orchestrator.nexus.xyz  --service-id=**
 Restart=always
 RestartSec=10
 
