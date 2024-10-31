@@ -121,6 +121,6 @@ if ! sudo systemctl enable $SERVICE_NAME.service; then
     exit 1
 fi
 
-show "Nexus Prover installation and service setup complete for Account Number $Account_Number!"
+show "Nexus Prover installation and service setup complete for Account Number $Account_Number , Now you can run this script again for next account!"
 show "You can check Nexus Prover logs using this command : journalctl -u nexus$Account_Number.service -fn 50"
 echo
