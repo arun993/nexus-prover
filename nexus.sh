@@ -22,8 +22,9 @@ show() {
     esac
 }
 # Prompt the user for the account number
-echo -n "Enter Account Number: "
-read Account_Number
+if echo -n "Enter Account Number: "; then
+   read Account_Number
+fi
 
 # Remove existing dir
 if [ -d "$HOME/network-api$Account_Number" ]; then
