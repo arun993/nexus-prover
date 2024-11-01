@@ -22,11 +22,9 @@ show() {
     esac
 }
 # Prompt the user for the account number
-if # Prompt the user for the account number
 echo -n "Enter Account Number: "
 read Account_Number
 
-fi
 # Remove existing dir
 if [ -d "$HOME/network-api$Account_Number" ]; then
     echo "Deleting existing repository..."  # Changed show to echo
@@ -34,9 +32,7 @@ if [ -d "$HOME/network-api$Account_Number" ]; then
 fi
 
 # Create the directory
-if mkdir "$HOME/network-api$Account_Number"  # Added $HOME to create in the correct path
-
-fi
+mkdir "$HOME/network-api$Account_Number"  # Added $HOME to create in the correct path
 
 echo "Proceeding with Account $Account_Number"
 
