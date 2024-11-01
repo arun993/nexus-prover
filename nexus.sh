@@ -22,18 +22,18 @@ show() {
     esac
 }
 # Prompt the user for the account number
-read -p "${Pink}Enter Account Number: " Account_Number
+read -p "Enter Account Number: " Account_Number
 
-#remove exixsting dir 
+# Remove existing dir
 if [ -d "$HOME/network-api$Account_Number" ]; then
-    show "Deleting existing repository..." "progress"
+    echo "Deleting existing repository..."  # Changed show to echo
     rm -rf "$HOME/network-api$Account_Number"
 fi
 
 # Create the directory
-mkdir "network-api$Account_Number"
+mkdir "$HOME/network-api$Account_Number"  # Added $HOME to create in the correct path
 
-echo "Procceding with Account $Account_Number"
+echo "Proceeding with Account $Account_Number"
 
 SERVICE_NAME="nexus$Account_Number"
 SERVICE_FILE="/etc/systemd/system/$SERVICE_NAME.service"
