@@ -30,8 +30,6 @@ rm -rf "$HOME/network-api$Account_Number"
 # Create the directory
 mkdir "$HOME/network-api$Account_Number"  # Added $HOME to create in the correct path
 
-echo "Proceeding with Account $Account_Number"
-
 SERVICE_NAME="nexus$Account_Number"
 SERVICE_FILE="/etc/systemd/system/$SERVICE_NAME.service"
 
