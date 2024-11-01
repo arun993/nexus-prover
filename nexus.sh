@@ -89,7 +89,7 @@ After=network.target
 User=$USER
 WorkingDirectory=$HOME/network-api$Account_Number/clients/cli
 Environment=NONINTERACTIVE=1
-ExecStart=$HOME/.cargo/bin/cargo run --release --bin prover -- beta.orchestrator.nexus.xyz  --service-id=$Account_Number
+ExecStart=$HOME/.cargo/bin/cargo run --release --bin prover -- beta.orchestrator.nexus.xyz  -- --service-id=$Account_Number
 Restart=always
 RestartSec=10
 
