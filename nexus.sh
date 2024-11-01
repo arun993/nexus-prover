@@ -22,7 +22,9 @@ show() {
     esac
 }
 # Prompt the user for the account number
-if read -p "Enter Account Number: " Account_Number
+if # Prompt the user for the account number
+echo -n "Enter Account Number: "
+read Account_Number
 
 fi
 # Remove existing dir
