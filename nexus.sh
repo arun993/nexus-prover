@@ -1,7 +1,7 @@
 #!/bin/bash
 
 curl -s https://raw.githubusercontent.com/arun993/mylogo/refs/heads/main/logo.sh | bash
-sleep 5
+sleep 3
 
 BOLD=$(tput bold)
 NORMAL=$(tput sgr0)
